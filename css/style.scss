@@ -44,17 +44,19 @@ body {
 ================================================== */
 
 .header{
-    border:1px solid #b69191;
+    // border:1px solid #b69191;
     height: 100px;
     
 }
 .header__inner {
-    border:1px solid rebeccapurple;
+    // border:1px solid rebeccapurple;
     max-width: 1000px;
     padding: 0 20px;
     margin: 0 auto;
-    line-height: 100px;
-    align-items: center;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    align-items:center;
 }
 
 .header-nav {
@@ -63,10 +65,28 @@ body {
 
     &__list {
     display: flex;
-}
+    line-height: 2;
+    }
 
     &__item {
-        padding-right: 10px;
+        margin-right: 20px; 
+        
+        a {
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+
+        &--red {
+            border-bottom: 2px dashed #C89A8B;
+            }
+
+        &--blue {
+            border-bottom: 2px dashed #61769A;
+            }
+
+        &--yellow {
+            border-bottom: 2px dashed #C7A54A;
+            }
     }
 }
 

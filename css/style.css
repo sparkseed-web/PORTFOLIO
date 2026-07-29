@@ -40,16 +40,16 @@ body {
     header （ヘッダー）
 ================================================== */
 .header {
-  border: 1px solid #b69191;
   height: 100px;
 }
 
 .header__inner {
-  border: 1px solid rebeccapurple;
   max-width: 1000px;
   padding: 0 20px;
   margin: 0 auto;
-  line-height: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: end;
   align-items: center;
 }
 
@@ -59,7 +59,21 @@ body {
 }
 .header-nav__list {
   display: flex;
+  line-height: 2;
 }
 .header-nav__item {
-  padding-right: 10px;
+  margin-right: 20px;
+}
+.header-nav__item a {
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.header-nav__item--red {
+  border-bottom: 2px dashed #C89A8B;
+}
+.header-nav__item--blue {
+  border-bottom: 2px dashed #61769A;
+}
+.header-nav__item--yellow {
+  border-bottom: 2px dashed #C7A54A;
 }/*# sourceMappingURL=style.css.map */
