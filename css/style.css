@@ -1,37 +1,65 @@
+@charset "UTF-8";
 /* ------------------------------
     基本設定（変数・リセット・共通）
 ------------------------------ */
-
-*,*::before,
+*, *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*横幅にボーダーやpaddingを含める設定 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*横幅にボーダーやpaddingを含める設定 */
 }
 
 img {
-    max-width: 100%; /* width: 100% から変更 */
-    height: auto;
-    vertical-align: bottom; /* 画像下の謎のすき間を消す */
+  max-width: 100%; /* width: 100% から変更 */
+  height: auto;
+  vertical-align: bottom; /* 画像下の謎のすき間を消す */
 }
 
 a {
-    text-decoration: none;
-    color: inherit; /* 親要素の文字色を継承させる（青字や紫字になるのを防ぐ） */
+  text-decoration: none;
+  color: inherit; /* 親要素の文字色を継承させる（青字や紫字になるのを防ぐ） */
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 :root {
-
-    /* Colors */
-
-    --text-color: #5E5E5E:
-
-    /* fonts */
+  /* Colors */
+  --text-color: #5e5e5e;
+  /* fonts */
+  --font-family-base: 'Noto+Sans+JP', sans-serif;
 }
 
+body {
+  color: var(--text-color);
+  font-family: var(--font-family-base);
+}
 
+/* ==================================================
+    header （ヘッダー）
+================================================== */
+.header {
+  border: 1px solid #b69191;
+  height: 100px;
+}
 
+.header__inner {
+  border: 1px solid rebeccapurple;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+  line-height: 100px;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-end; /* 右寄せにする */
+}
+.header-nav__list {
+  display: flex;
+}
+.header-nav__item {
+  padding-right: 10px;
+}/*# sourceMappingURL=style.css.map */
