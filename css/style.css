@@ -1,0 +1,37 @@
+/* ------------------------------
+    基本設定（変数・リセット・共通）
+------------------------------ */
+
+*,*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*横幅にボーダーやpaddingを含める設定 */
+}
+
+img {
+    max-width: 100%; /* width: 100% から変更 */
+    height: auto;
+    vertical-align: bottom; /* 画像下の謎のすき間を消す */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* 親要素の文字色を継承させる（青字や紫字になるのを防ぐ） */
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+
+    /* Colors */
+
+    --text-color: #5E5E5E:
+
+    /* fonts */
+}
+
+
+
