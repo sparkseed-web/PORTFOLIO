@@ -90,9 +90,48 @@ body {
     sections
 ================================================== */
 
-.section__title {
+.section {
+    text-align: center;
     
+
+    &__title {
+        width: 450px;
+        height: 90px;
+        margin: clamp(50px, 6.66vw, 80px) auto;
+        font-size: 3rem;
+        letter-spacing: 8%;
+        border: 2px dashed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--red {
+            border-color: #C89A8B;
+        }
+
+        &--blue {
+            border-color: #61769A;
+        }
+
+        &--navy {
+            border-color: #293C6C;
+        }
+
+        &--yellow {
+            border-color: #C7A54A;
+        }
+    }
 }
+
+.works-box  {
+    display: flex;
+
+    &__title {
+        font-size: 1.25rem;
+    }
+}
+
+    
 
 /* ==================================================
     header （ヘッダー）
