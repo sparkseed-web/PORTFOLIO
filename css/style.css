@@ -83,6 +83,40 @@ body {
 /* ==================================================
     sections
 ================================================== */
+.section {
+  text-align: center;
+}
+.section__title {
+  width: 450px;
+  height: 90px;
+  margin: clamp(50px, 6.66vw, 80px) auto;
+  font-size: 3rem;
+  letter-spacing: 8%;
+  border: 2px dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__title--red {
+  border-color: #C89A8B;
+}
+.section__title--blue {
+  border-color: #61769A;
+}
+.section__title--navy {
+  border-color: #293C6C;
+}
+.section__title--yellow {
+  border-color: #C7A54A;
+}
+
+.works-box {
+  display: flex;
+}
+.works-box__title {
+  font-size: 1.25rem;
+}
+
 /* ==================================================
     header （ヘッダー）
 ================================================== */
