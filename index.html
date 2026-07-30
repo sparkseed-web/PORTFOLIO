@@ -18,29 +18,126 @@
     <!-- Googlefont読み込み終わり -->
 
     <!-- リセットcss -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header class="header">
-        <div class="header__inner">
-            <nav class="header-nav">
-                <ul class="header-nav__list">
-                    <li class="header-nav__item header-nav__item--red"><a href="">WORKS</a></li>
-                    <li class="header-nav__item header-nav__item--blue"><a href="">ABOUT</a></li>
-                    <li class="header-nav__item header-nav__item--yellow"><a href="">CONTACT</a></li>
+        <div class="frame-inner">
+            <nav class="global-nav">
+                <ul class="global-nav__list">
+                    <li class="global-nav__item global-nav__item--red"><a href="">WORKS</a></li>
+                    <li class="global-nav__item global-nav__item--blue"><a href="">ABOUT</a></li>
+                    <li class="global-nav__item global-nav__item--yellow"><a href="">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
+        <div class="fv-container">
+            <div class="wrapper">
+                <div class="fv-description">
+                    <h1 class="fv-description__title">PORTFOLIO</h1>
+                    <p class="fv-description__en-name">SAKAMOTO<br>MIKU</p>
+                    <p class="fv-description__text">webdesign / coding / wordpress...... </p>
+                </div>
+                <div class="fv-img-box">
+                    <img class="fv-img-box__image" src="images/三色.jpg" alt="">
+                </div>
+            </div>
+            <div class="scroll-down">
+                <!-- 円形テキスト（SVG） -->
+                <svg class="scroll-down__circle" viewBox="0 0 100 100">
+                    <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                    <text>
+                    <textPath href="#textPath" startOffset="0%">
+                        SCROLL DOWN • SCROLL DOWN • 
+                    </textPath>
+                    </text>
+                </svg>
+                
+                <!-- 中央の矢印ライン -->
+                <div class="scroll-down__arrow"></div>
+            </div>
 
+            <!-- <div class="container_01">
+                <a href="#" class="scroll-down_01">
+                    <div class="circle-text_01"></div>
+                    <div class="arrow_01"></div>
+                </a>
+            </div> -->
+        </div>
+
+        <section class="section works-section">
+            <h2 class="section__title section__title--red">WORKS</h2>
+            <div class="wrapper works-wrapper">
+                <div class="works-box">
+                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                    <div class="works-inner">
+                        <h3 class="works-box__title">sotto｜雑貨ショップ</h3>
+                        <p class="works-caption">（WordPressオリジナルテーマ /  企画・デザイン・コーディング担当）</p>
+                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
+                        <a href="" class="works-btn">more</a>
+                    </div>
+                    <div class="panel">
+                        <p class="panel-heading"></p>
+                    </div>
+                </div>
+                <div class="works-box"></div>
+                <div class="works-box"></div>
+                <div class="works-box"></div>
+                <div class="works-box"></div>
+            </div>
+        </section>
+
+        <section class="section about-section">
+            <h2 class="section__title section__title--blue">ABOUT</h2>
+            <div class="about-wrapper">
+
+            </div>
+        </section>
+
+        <section class="section skill-section">
+            <h2 class="section__title section__title--navy">SKILL</h2>
+            <div class="slill-wrapper">
+
+            </div>
+        </section>
+
+        <section class="section contact-section">
+            <h2 class="section__title section__title--yellow">CONTACT</h2>
+            <p class="contact-section__lead-text">ご質問やご意見など下記のフォームからお気軽にお問い合わせください。</p>
+            <div class="contact-wrapper">
+
+            </div>
+            <div class="contact-inner">
+                <input type="text">
+                <p></p>
+            </div>
+            <button class="button"></button>
+        </section>
+
+        <section class="section gallery-section">
+            <h2 class="gallery-section__title">GALLERY</h2>
+            <div class="gallery-wrapper">
+
+            </div>
+        </section>
     </main>
 
-    <footer>
-
+    <footer class="footer">
+        <div class="frame-inner">
+            <nav class="global-nav">
+                <ul class="global-nav__list">
+                    <li class="global-nav__item global-nav__item--red"><a href="">WORKS</a></li>
+                    <li class="global-nav__item global-nav__item--blue"><a href="">ABOUT</a></li>
+                    <li class="global-nav__item global-nav__item--yellow"><a href="">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <small>&copy;2026</small>
     </footer>
     
 </body>

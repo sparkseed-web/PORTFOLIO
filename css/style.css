@@ -2,11 +2,50 @@
 /* ------------------------------
     基本設定（変数・リセット・共通）
 ------------------------------ */
-*, *::before,
-*::after {
+/* Josh's Custom CSS Reset
+https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box; /*横幅にボーダーやpaddingを含める設定 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
 }
 
 img {
@@ -36,6 +75,48 @@ body {
   font-family: var(--font-family-base);
 }
 
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==================================================
+    sections
+================================================== */
+.section {
+  text-align: center;
+}
+.section__title {
+  width: 450px;
+  height: 90px;
+  margin: clamp(50px, 6.66vw, 80px) auto;
+  font-size: 3rem;
+  letter-spacing: 8%;
+  border: 2px dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__title--red {
+  border-color: #C89A8B;
+}
+.section__title--blue {
+  border-color: #61769A;
+}
+.section__title--navy {
+  border-color: #293C6C;
+}
+.section__title--yellow {
+  border-color: #C7A54A;
+}
+
+.works-box {
+  display: flex;
+}
+.works-box__title {
+  font-size: 1.25rem;
+}
+
 /* ==================================================
     header （ヘッダー）
 ================================================== */
@@ -43,37 +124,165 @@ body {
   height: 100px;
 }
 
-.header__inner {
+.frame-inner {
   max-width: 1000px;
+  height: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  height: 100px;
   display: flex;
   justify-content: end;
   align-items: center;
 }
 
-.header-nav {
+.global-nav {
   display: flex;
   justify-content: flex-end; /* 右寄せにする */
 }
-.header-nav__list {
+.global-nav__list {
   display: flex;
   line-height: 2;
 }
-.header-nav__item {
-  margin-right: 20px;
+.global-nav__item {
+  margin-right: 60px;
 }
-.header-nav__item a {
+.global-nav__item:nth-last-child(1) {
+  margin-right: 0;
+}
+.global-nav__item a {
   display: inline-block;
   padding-bottom: 2px;
 }
-.header-nav__item--red {
+.global-nav__item--red {
   border-bottom: 2px dashed #C89A8B;
 }
-.header-nav__item--blue {
+.global-nav__item--blue {
   border-bottom: 2px dashed #61769A;
 }
-.header-nav__item--yellow {
+.global-nav__item--yellow {
   border-bottom: 2px dashed #C7A54A;
+}
+
+/* ==================================================
+    main （メイン）
+================================================== */
+.fv-container {
+  position: relative;
+  height: calc(100vh - 100px);
+}
+
+.wrapper {
+  display: flex;
+  margin-top: 70px;
+}
+
+.fv-description {
+  width: 50%;
+  padding: 145px 45px 60px;
+}
+.fv-description__title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: 10;
+}
+.fv-description__en-name {
+  font-size: 3rem;
+  line-height: 1.3;
+  margin: 20px 0;
+}
+
+.fv-img-box {
+  position: relative;
+  width: 50%; /* 親の50%（500px）いっぱいに広げる */
+}
+.fv-img-box::before {
+  content: "";
+  z-index: -50;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: #E8E8E8;
+  /* 点線を描くための背景グラデーション（上・右・下・左の4辺分） */
+  background-image: linear-gradient(to right, #ccc 50%, transparent 50%), linear-gradient(to bottom, #ccc 50%, transparent 50%), linear-gradient(to right, #ccc 50%, transparent 50%), linear-gradient(to bottom, #ccc 50%, transparent 50%); /* 左 */
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+  /* ★ここで「点線の長さ」と「線の太さ」を調整します！ */
+  /* 形式：[点線の長さ + 間隔] [線の太さ] */
+  background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px; /* 左辺：太さ2px、長さ15px周期 */
+}
+.fv-img-box__image {
+  width: 100%; /* .fv-img-boxに対する500pxの割合 */
+  aspect-ratio: 1/1; /* 縦横比を1:1（正方形）に固定 */
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像が歪むのを防ぐ */
+  box-shadow: 8px 3px 25px 2px rgb(191, 191, 191);
+}
+.scroll-down {
+  position: absolute;
+  bottom: 10%; /* 画面の下から30px上の位置に配置 */
+  left: 50%; /* 画面の左から50%の位置へ移動 */
+  transform: translateX(-50%); /* 自身の幅の半分だけ左に戻して完璧な中央寄せにする */
+  width: 140px; /* 全体のサイズ */
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 1. 円形テキストの回転アニメーション */
+}
+.scroll-down__circle {
+  width: 100%;
+  height: 100%;
+  animation: rotateCircle 12s linear infinite; /* 12秒で1周回転 */
+}
+.scroll-down__circle text {
+  fill: #333333; /* 文字の色（白） */
+  font-size: 8.5px; /* 文字の大きさ */
+  font-family: serif; /* フォント（明朝系・セリフ体） */
+  letter-spacing: 2px; /* 文字間隔 */
+}
+.scroll-down {
+  /* 2. 中央の矢印ライン */
+}
+.scroll-down__arrow {
+  position: absolute;
+  width: 1px;
+  height: 30px;
+  background-color: #333333;
+  /* 矢印の先端（下側のくの字） */
+}
+.scroll-down__arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  border-bottom: 1px solid #333333;
+  border-right: 1px solid #333333;
+  transform: rotate(45deg);
+}
+
+/* 回転キーフレーム */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ==================================================
+    footer(フッター)
+================================================== */
+.footer {
+  height: 160px;
+}
+.footer .frame-inner {
+  justify-content: center;
+}
+
+small {
+  display: block;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
