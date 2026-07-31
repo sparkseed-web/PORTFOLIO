@@ -83,9 +83,6 @@ body {
 /* ==================================================
     sections
 ================================================== */
-.section {
-  text-align: center;
-}
 .section__title {
   width: 450px;
   height: 90px;
@@ -108,13 +105,6 @@ body {
 }
 .section__title--yellow {
   border-color: #C7A54A;
-}
-
-.works-box {
-  display: flex;
-}
-.works-box__title {
-  font-size: 1.25rem;
 }
 
 /* ==================================================
@@ -169,8 +159,7 @@ body {
   position: relative;
   height: calc(100vh - 100px);
 }
-
-.wrapper {
+.fv-container__wrapper {
   display: flex;
   margin-top: 70px;
 }
@@ -194,7 +183,14 @@ body {
   position: relative;
   width: 50%; /* 親の50%（500px）いっぱいに広げる */
 }
-.fv-img-box::before {
+.fv-img-box__image {
+  width: 100%; /* .fv-img-boxに対する500pxの割合 */
+  aspect-ratio: 1/1; /* 縦横比を1:1（正方形）に固定 */
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像が歪むのを防ぐ */
+  box-shadow: 8px 3px 25px 2px rgb(191, 191, 191);
+}
+.bg-panel::before {
   content: "";
   z-index: -50;
   position: absolute;
@@ -211,13 +207,7 @@ body {
   /* 形式：[点線の長さ + 間隔] [線の太さ] */
   background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px; /* 左辺：太さ2px、長さ15px周期 */
 }
-.fv-img-box__image {
-  width: 100%; /* .fv-img-boxに対する500pxの割合 */
-  aspect-ratio: 1/1; /* 縦横比を1:1（正方形）に固定 */
-  -o-object-fit: cover;
-     object-fit: cover; /* 画像が歪むのを防ぐ */
-  box-shadow: 8px 3px 25px 2px rgb(191, 191, 191);
-}
+
 .scroll-down {
   position: absolute;
   bottom: 10%; /* 画面の下から30px上の位置に配置 */
@@ -272,6 +262,66 @@ body {
     transform: rotate(360deg);
   }
 }
+/* ------------------------------
+    works-section
+------------------------------ */
+.works-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.works-box {
+  display: flex;
+  position: relative;
+}
+.works-box::before {
+  top: 40px;
+  right: -70px;
+}
+.works-box__img, .works-box__inner {
+  box-shadow: 6px 8px 12px 3px rgb(191, 191, 191);
+  width: 50%;
+}
+.works-box__title {
+  font-size: 1.25rem;
+  letter-spacing: 8%;
+}
+.works-box__inner {
+  padding: 70px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+}
+.works-box__btn {
+  color: #fff;
+  background-color: #9F9F9F;
+  padding: 10px 48px;
+  width: 150px;
+  border-radius: 100px;
+  letter-spacing: 12%;
+  text-align: center;
+  box-shadow: 0 4px 0 rgb(110, 108, 108);
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.works-box__btn:hover {
+  transform: translateY(4px);
+  background-color: #C89A8B;
+  box-shadow: none;
+}
+
+.panel-text {
+  color: #9F9F9F;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: -110px;
+  transform: rotate(90deg);
+  letter-spacing: 20%;
+}
+
 /* ==================================================
     footer(フッター)
 ================================================== */
