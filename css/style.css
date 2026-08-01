@@ -322,6 +322,40 @@ body {
   letter-spacing: 20%;
 }
 
+/* ------------------------------
+    about-section
+------------------------------ */
+.about-section__img-box {
+  width: 30%;
+}
+.about-section__img-box .jp-name {
+  text-align: center;
+}
+.about-section__box {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.about-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 150px;
+}
+.about-wrapper__title {
+  color: #757575;
+  display: inline-block;
+  font-size: 1.25rem;
+  background-color: #DFFFFC;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+.about-wrapper__text {
+  line-height: 2.84;
+}
+
 /* ==================================================
     footer(フッター)
 ================================================== */
