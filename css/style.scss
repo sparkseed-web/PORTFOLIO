@@ -121,6 +121,18 @@ body {
             border-color: #C7A54A;
         }
     }
+
+    &__divider {
+        display: inline-block;
+        width: 100%;
+        height: 300px;
+
+        &--last {
+            height: 100px;
+        }
+    }
+
+    
 }
 
 
