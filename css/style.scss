@@ -582,11 +582,26 @@ body {
     }
 }
 
-
-
 .icon-box {
     display: flex;
     gap: 20px;
+}
+
+
+/* ------------------------------
+    contact-section
+------------------------------ */
+
+.contact-section {
+    text-align: center;
+}
+
+.form {
+
+    &__item {
+        display: flex;
+        
+    }
 }
 
 
