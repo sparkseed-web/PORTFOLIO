@@ -50,6 +50,11 @@
     isolation: isolate;
     }
 
+html {
+    scroll-behavior: smooth;/* ページ全体のスクロールを滑らかにする */
+}
+
+
 
 img {
     max-width: 100%; /* width: 100% から変更 */
