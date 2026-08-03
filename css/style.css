@@ -106,6 +106,9 @@ body {
 .section__title--yellow {
   border-color: #C7A54A;
 }
+.section__subtitle {
+  font-size: 1.25rem;
+}
 .section__divider {
   display: inline-block;
   width: 100%;
@@ -293,7 +296,6 @@ body {
   width: 50%;
 }
 .works-box__title {
-  font-size: 1.25rem;
   letter-spacing: 8%;
 }
 .works-box__inner {
@@ -357,7 +359,6 @@ body {
 .about-wrapper__title {
   color: #757575;
   display: inline-block;
-  font-size: 1.25rem;
   background-color: #DFFFFC;
   padding: 5px 20px;
   margin-bottom: 20px;
@@ -412,9 +413,60 @@ body {
 .contact-section {
   text-align: center;
 }
+.contact-section__lead-text {
+  margin-bottom: 30px;
+}
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 70%;
+  margin-left: auto; /*  フォーム自体を中央に寄せる */
+  margin-right: auto; /*  フォーム自体を中央に寄せる */
+}
 .form__item {
   display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form__label {
+  text-align: left;
+}
+.form__input, .form__textarea {
+  background-color: #ebe8e8;
+  border: none;
+  padding: 15px;
+}
+.form__textarea {
+  height: 250px;
+  resize: vertical;
+}
+.form__checkbox, .form__agree, .form__button {
+  cursor: pointer;
+}
+.form__checkbox {
+  transform: scale(1.5);
+}
+.form__agree {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.form__button {
+  padding: 20px 40px;
+  background-color: #F4EDDE;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 4px 0 rgb(235, 215, 197);
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.form__button:hover {
+  transform: translateY(4px);
+  background-color: #e0c579;
+  box-shadow: none;
 }
 
 /* ==================================================

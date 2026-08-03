@@ -122,6 +122,10 @@ body {
         }
     }
 
+    &__subtitle {
+        font-size: 1.25rem;
+    }
+
     &__divider {
         display: inline-block;
         width: 100%;
@@ -179,6 +183,8 @@ body {
         a {
             display: inline-block;
             padding-bottom: 2px;
+            
+
         }
 
         &--red {
@@ -425,6 +431,9 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+
+
+
 /* ------------------------------
     works-section
 ------------------------------ */
@@ -451,7 +460,6 @@ body {
     }
 
     &__title {
-        font-size: 1.25rem;
         letter-spacing: 8%;
     }
 
@@ -530,7 +538,6 @@ body {
     &__title {
         color:#757575;
         display: inline-block;
-        font-size: 1.25rem;
         background-color: #DFFFFC;
         padding: 5px 20px;
         margin-bottom: 20px;
@@ -594,15 +601,81 @@ body {
 
 .contact-section {
     text-align: center;
+    
+    &__lead-text {
+        margin-bottom: 30px;
+    }
+
+    
 }
 
 .form {
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 70%;
+    margin-left: auto;    /*  フォーム自体を中央に寄せる */
+    margin-right: auto; /*  フォーム自体を中央に寄せる */
+    
 
     &__item {
-        display: flex;
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    
+    }  
+
+    &__label {
+        text-align: left;
+    }
+
+
+    
+    &__input ,&__textarea {
+        background-color:#ebe8e8;
+        border: none;
+        padding: 15px;
+    }
+
+    &__textarea {
+        height: 250px;
+        resize: vertical;
+    }
+
+    &__checkbox, &__agree, &__button {
+        cursor: pointer;
+    }
+
+
+    &__checkbox {
+        transform: scale(1.5);
         
     }
+
+    &__agree {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    &__button {
+        padding: 20px 40px;
+        background-color: #F4EDDE;
+        border: none;
+        width: fit-content;
+        margin: 0 auto;
+        box-shadow: 0 4px 0     rgb(235, 215, 197);
+        transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+
+        &:hover {
+            transform: translateY(4px);
+            background-color: #e0c579;
+            box-shadow: none;
+        }
+    }
 }
+
+
 
 
 /* ==================================================
