@@ -632,6 +632,14 @@ body {
 
     &__label {
         text-align: left;
+        font-size: 0.875rem;
+    }
+
+    .badge {
+        color: red;
+        
+        margin-left: 10px;
+        font-size: 0.75rem;
     }
 
 

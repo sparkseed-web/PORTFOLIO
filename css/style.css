@@ -436,6 +436,12 @@ body {
 }
 .form__label {
   text-align: left;
+  font-size: 0.875rem;
+}
+.form .badge {
+  color: red;
+  margin-left: 10px;
+  font-size: 0.75rem;
 }
 .form__input, .form__textarea {
   background-color: #ebe8e8;
