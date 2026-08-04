@@ -125,10 +125,33 @@ body {
         &--yellow {
             border-color: #C7A54A;
         }
+
+        &--purple {
+            border-color: #70138A;
+            font-size: 2rem;
+            width: 300px;
+            height: 65px;
+            margin-bottom: clamp(50px, 6.66vw, 60px);
+        }
     }
 
     &__subtitle {
         font-size: 1.25rem;
+    }
+
+    &__lead {
+        text-align: center;
+        margin-bottom: 30px;
+
+        &--text {
+            font-weight:500;
+            margin-bottom: 12px;
+            letter-spacing: 0.13rem;
+        }
+
+        &--note {
+            font-size: 0.75rem;
+        }
     }
 
     &__divider {
@@ -604,16 +627,6 @@ body {
     contact-section
 ------------------------------ */
 
-.contact-section {
-    text-align: center;
-    
-    &__lead-text {
-        margin-bottom: 30px;
-    }
-
-    
-}
-
 .form {
     display:flex;
     flex-direction: column;
@@ -689,18 +702,21 @@ body {
 }
 
 /* ------------------------------
-    contact-section
+    gallery-section
 ------------------------------ */
 
 .gallery-section {
 
     &__title {
-        
+        margin: clamp(50px, 6.66vw, 80px) auto;
     }
 
     &__wrapper {
         max-width: 1300px;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
     }
 }
 
