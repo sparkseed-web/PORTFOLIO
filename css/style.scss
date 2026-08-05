@@ -738,3 +738,35 @@ small {
     display: block;
     text-align: center;
 }
+
+
+/* ==========================================
+    Work Detail Page（詳細ページ専用スタイル）
+========================================== */
+
+.works-hero {
+
+    &__title {
+        padding: 40px 60px;
+        position: relative;/* 疑似要素の位置の基準にする */
+        background-image: url(../images/detail-title.jpg);
+        font-weight: normal;
+        letter-spacing: 0.2rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 2%;
+            top: 50%;
+            transform: translateY(-50%); /* 縦方向の中央揃え */
+
+            width: 6px;
+            height: 50%;
+            background-color: #469246;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+}
