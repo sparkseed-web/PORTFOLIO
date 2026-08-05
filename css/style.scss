@@ -587,13 +587,14 @@ body {
     justify-content: center ;
 
     &__box {
-        max-width: 260px;
-        height: 450px;
+        width: 260px;
+        aspect-ratio: 1 / 1; /*アスペクト比を1:1（正方形）に指定（ 自動で縦も200pxの正方形に ） */
         border-radius: 15px;
         background-image: url(../images/skill-card.jpg);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 30px;
         box-shadow: 6px 8px 12px 3px rgb(191 191 191)
     }
@@ -618,7 +619,7 @@ body {
 
 .icon-box {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 
@@ -736,4 +737,36 @@ body {
 small {
     display: block;
     text-align: center;
+}
+
+
+/* ==========================================
+    Work Detail Page（詳細ページ専用スタイル）
+========================================== */
+
+.works-hero {
+
+    &__title {
+        padding: 40px 60px;
+        position: relative;/* 疑似要素の位置の基準にする */
+        background-image: url(../images/detail-title.jpg);
+        font-weight: normal;
+        letter-spacing: 0.2rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 2%;
+            top: 50%;
+            transform: translateY(-50%); /* 縦方向の中央揃え */
+
+            width: 6px;
+            height: 50%;
+            background-color: #469246;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+    }
 }
