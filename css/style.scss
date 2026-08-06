@@ -22,11 +22,12 @@
 
     body {
     line-height: 1.5;
+    letter-spacing: 0.2rem;  
     -webkit-font-smoothing: antialiased;
     }
 
     img, picture, video, canvas, svg {
-    display: block;
+    display: block; 
     max-width: 100%;
     }
 
@@ -96,7 +97,8 @@ body {
 ================================================== */
 
 .section {
-    
+    max-width: 1300px;
+    margin: 0 auto;
     
 
     &__title {
@@ -466,7 +468,7 @@ body {
 ------------------------------ */
 
 .works-wrapper {
-    display: flex;
+    display: flex;   
     flex-direction: column;
     gap: 120px;
 }
@@ -556,8 +558,6 @@ body {
 }
 
 .about-wrapper {
-    max-width: 1300px;
-    margin: 0 auto;
     display: flex;
     gap: 150px;
     align-items: center;
@@ -580,8 +580,6 @@ body {
 ------------------------------ */
 
 .skill-wrapper {
-    max-width: 1300px;
-    margin: 0 auto;
     display: flex;
     gap: 70px;
     justify-content: center ;
@@ -712,8 +710,6 @@ body {
     }
 
     &__wrapper {
-        max-width: 1300px;
-        margin: 0 auto;
         display: flex;
         justify-content: center;
         gap: 20px;
@@ -739,10 +735,42 @@ small {
     text-align: center;
 }
 
-
+/* ANCHOR: Work Detail Page (詳細ページ専用スタイル) */
 /* ==========================================
     Work Detail Page（詳細ページ専用スタイル）
 ========================================== */
+
+.works-detail-bg {
+    background-image: url(../images/works-detail-bg02.jpg);
+    background-repeat: no-repeat; /* 繰り返さない */
+    background-size: cover;       /* 縦横比を保ったまま要素いっぱいに拡大 */
+    background-position: center;/* 中央を基準に配置 */
+    padding-bottom: 100px;
+}
+
+
+
+.works-detail {
+
+    &__wrapper {
+    max-width: 910px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-bottom: 100px;
+    padding: 80px ;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
 
 .works-hero {
 
@@ -769,4 +797,96 @@ small {
     &__image {
         max-width: 100%;
     }
+
+}
+
+.works-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 100px;
+    margin-bottom: 100px;
+
+    &__btn {
+        border-radius: 50px;
+        padding: 10px;
+        
+        border: 1px solid #8BF1D8;
+        box-shadow: 6px 8px 12px 3px rgb(191 191 191);
+        display: flex;
+        gap: 10px;
+
+    }
+}
+
+.sp-views {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom:  110px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__img {
+        border-radius: 25px;
+    }
+}
+
+.works__title {
+    font-size: 2rem;
+    text-align: center;
+    
+}
+
+.works-wrapper {
+    max-width: 910px;
+    margin: 0 auto;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__sub-title {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+}
+
+.works-points {
+
+    .works-detail__wrapper {
+        gap: 100px;
+    }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        padding: 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__text {
+        border-bottom: 1px solid ;
+    }
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
 }

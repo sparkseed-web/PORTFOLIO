@@ -20,6 +20,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 }
 body {
   line-height: 1.5;
+  letter-spacing: 0.2rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -87,6 +88,10 @@ body {
 /* ==================================================
     sections
 ================================================== */
+.section {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 .section__title {
   width: 450px;
   height: 90px;
@@ -373,8 +378,6 @@ body {
 }
 
 .about-wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
   display: flex;
   gap: 150px;
   align-items: center;
@@ -394,8 +397,6 @@ body {
     skill-section
 ------------------------------ */
 .skill-wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
   display: flex;
   gap: 70px;
   justify-content: center;
@@ -499,8 +500,6 @@ body {
   margin: clamp(50px, 6.66vw, 80px) auto;
 }
 .gallery-section__wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -521,9 +520,35 @@ small {
   text-align: center;
 }
 
+/* ANCHOR: Work Detail Page (詳細ページ専用スタイル) */
 /* ==========================================
     Work Detail Page（詳細ページ専用スタイル）
 ========================================== */
+.works-detail-bg {
+  background-image: url(../images/works-detail-bg02.jpg);
+  background-repeat: no-repeat; /* 繰り返さない */
+  background-size: cover; /* 縦横比を保ったまま要素いっぱいに拡大 */
+  background-position: center; /* 中央を基準に配置 */
+  padding-bottom: 100px;
+}
+
+.works-detail__wrapper {
+  max-width: 910px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 100px;
+  padding: 80px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.works-detail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .works-hero__title {
   padding: 40px 60px;
   position: relative; /* 疑似要素の位置の基準にする */
@@ -543,4 +568,81 @@ small {
 }
 .works-hero__image {
   max-width: 100%;
+}
+
+.works-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding-top: 100px;
+  margin-bottom: 100px;
+}
+.works-links__btn {
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #8BF1D8;
+  box-shadow: 6px 8px 12px 3px rgb(191, 191, 191);
+  display: flex;
+  gap: 10px;
+}
+
+.sp-views {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 110px;
+}
+.sp-views__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.sp-views__img {
+  border-radius: 25px;
+}
+
+.works__title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.works-wrapper {
+  max-width: 910px;
+  margin: 0 auto;
+}
+.works-wrapper__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.works-wrapper__sub-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.works-points .works-detail__wrapper {
+  gap: 100px;
+}
+.works-points__lists {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 0;
+}
+.works-points__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.works-points__text {
+  border-bottom: 1px solid;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
