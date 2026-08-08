@@ -382,9 +382,9 @@ body {
   font-weight: bold;
   position: absolute;
   top: 50%;
-  right: -110px;
+  right: -100px;
   transform: rotate(90deg);
-  letter-spacing: 20%;
+  letter-spacing: 15%;
 }
 
 /* ------------------------------
