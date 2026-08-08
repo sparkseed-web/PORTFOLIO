@@ -81,7 +81,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: 910px;
   margin: 0 auto;
 }
 
@@ -148,6 +148,36 @@ body {
 }
 
 /* ==================================================
+    read more ボタン
+================================================== */
+.btn {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.readmore-btn {
+  color: #fff;
+  background-color: #9F9F9F;
+  padding: 10px 48px;
+  width: 200px;
+  border-radius: 100px;
+  letter-spacing: 12%;
+  text-align: center;
+  box-shadow: 0 4px 0 rgb(110, 108, 108);
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.readmore-btn:hover {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+.readmore-btn__works:hover {
+  background-color: #C89A8B;
+}
+.readmore-btn__about:hover {
+  background-color: #5572b4;
+}
+
+/* ==================================================
     header （ヘッダー）
 ================================================== */
 .header {
@@ -155,9 +185,8 @@ body {
 }
 
 .frame-inner {
-  max-width: 1000px;
+  max-width: 1300px;
   height: 100%;
-  padding: 0 20px;
   margin: 0 auto;
   display: flex;
   justify-content: end;
@@ -178,18 +207,31 @@ body {
 .global-nav__item:nth-last-child(1) {
   margin-right: 0;
 }
-.global-nav__item a {
+.global-nav__link {
   display: inline-block;
   padding-bottom: 2px;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
 }
-.global-nav__item--red {
+.global-nav__link--red {
   border-bottom: 2px dashed #C89A8B;
 }
-.global-nav__item--blue {
+.global-nav__link--red:hover {
+  border-color: #d4cac6;
+}
+.global-nav__link--blue {
   border-bottom: 2px dashed #61769A;
 }
-.global-nav__item--yellow {
+.global-nav__link--blue:hover {
+  border-color: #9b9fa5;
+}
+.global-nav__link--yellow {
   border-bottom: 2px dashed #C7A54A;
+}
+.global-nav__link--yellow:hover {
+  border-color: #bbb5a6;
+}
+.global-nav__link:hover {
+  color: #b6b6b6;
 }
 
 /* ==================================================
@@ -327,29 +369,13 @@ body {
   letter-spacing: 8%;
 }
 .works-box__inner {
-  padding: 70px 90px;
+  padding: 70px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   background-color: #fff;
+  justify-content: center;
 }
-.works-box__btn {
-  color: #fff;
-  background-color: #9F9F9F;
-  padding: 10px 48px;
-  width: 150px;
-  border-radius: 100px;
-  letter-spacing: 12%;
-  text-align: center;
-  box-shadow: 0 4px 0 rgb(110, 108, 108);
-  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
-}
-.works-box__btn:hover {
-  transform: translateY(4px);
-  background-color: #C89A8B;
-  box-shadow: none;
-}
-
 .panel-text {
   color: #9F9F9F;
   font-size: 1.5rem;
@@ -371,15 +397,19 @@ body {
   text-align: center;
 }
 .about-section__box {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
+}
+.about-section__text {
+  font-size: 1.2rem;
+  line-height: 2;
 }
 
 .about-wrapper {
   display: flex;
-  gap: 150px;
+  gap: 100px;
   align-items: center;
 }
 .about-wrapper__title {
@@ -553,8 +583,9 @@ small {
   padding: 40px 60px;
   position: relative; /* 疑似要素の位置の基準にする */
   background-image: url(../images/detail-title.jpg);
-  font-weight: normal;
-  letter-spacing: 0.2rem;
+  background-repeat: no-repeat; /* 繰り返さない */
+  background-size: cover; /* 縦横比を保ったまま要素いっぱいに拡大 */
+  background-position: center; /* 中央を基準に配置 */
 }
 .works-hero__title::before {
   content: "";
@@ -565,6 +596,10 @@ small {
   width: 6px;
   height: 50%;
   background-color: #469246;
+}
+.works-hero {
+  font-weight: normal;
+  letter-spacing: 0.2rem;
 }
 .works-hero__image {
   max-width: 100%;
@@ -585,6 +620,11 @@ small {
   box-shadow: 6px 8px 12px 3px rgb(191, 191, 191);
   display: flex;
   gap: 10px;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.works-links__btn:hover {
+  transform: translateY(-4px); /* 上に4px浮かせる */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* 影を広げて濃くする */
 }
 
 .sp-views {
@@ -634,9 +674,10 @@ small {
 .works-points__item {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 .works-points__text {
+  padding-bottom: 10px;
   border-bottom: 1px solid;
 }
 
@@ -645,4 +686,16 @@ small {
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.back-link:hover {
+  color: #918f8f;
+}
+
+/* ANCHOR: about Detail Page (詳細ページ専用スタイル) */
+/* ==========================================
+    about Detail Page（詳細ページ専用スタイル）
+========================================== */
+.about-detail .section__divider {
+  margin-top: 0;
 }/*# sourceMappingURL=style.css.map */
