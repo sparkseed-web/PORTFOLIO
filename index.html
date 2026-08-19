@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    ローディング画面
+        <div id="loading">
+            <div class="loader-logo">PORTFOLIO</div>
+            <div class="loader-line"></div>
+        </div>
 
     <header class="header">
         <div class="frame-inner">
@@ -36,6 +41,8 @@
     </header>
 
     <main>
+        
+
         <div class="fv-container">
             <div class="wrapper fv-container__wrapper">
                 <div class="fv-description">
@@ -78,7 +85,13 @@
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
                         <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                            <span class="works-box__card">jQuery</span>
+                            <span class="works-box__card">Figma</span>
+                            <span class="works-box__card">PHP</span>
+                        </p>
                         <a href="/works/work-detail-01.html" class="readmore-btn readmore-btn__works">more</a>
                     </div>
                     <div class="panel-text">ORIGINAL</div>
@@ -88,8 +101,13 @@
                     <img class="works-box__img"  src="images/mockup01.jpg" alt="">
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
-                        <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
-                        <p class="works-caption">HTML / CSS / jQuery / Figma </p>
+                        <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                            <span class="works-box__card">jQuery</span>
+                            <span class="works-box__card">Figma</span>
+                        </p>
                         <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
                     <div class="panel-text">ORIGINAL</div>
@@ -100,7 +118,10 @@
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">トラベルブログサイト模写</h3>
                         <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
-                        <p class="works-caption">HTML / CSS </p>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
                         <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
                     <div class="panel-text">MOCKUP</div>
@@ -111,7 +132,10 @@
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">アパレルショップ商品ページ模写</h3>
                         <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
-                        <p class="works-caption">HTML / CSS </p>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
                         <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
                     <div class="panel-text">MOCKUP</div>
@@ -122,7 +146,10 @@
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">フォトブック紹介サイト模写</h3>
                         <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
-                        <p class="works-caption">HTML / CSS </p>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
                         <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
                     <div class="panel-text">MOCKUP</div>
@@ -266,5 +293,8 @@
         <small>&copy;2026</small>
     </footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

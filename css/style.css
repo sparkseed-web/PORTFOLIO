@@ -178,10 +178,49 @@ body {
 }
 
 /* ==================================================
+    ローディング画面
+================================================== */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #ece9e6, #ffffff, #f5f7fa);
+  transition: opacity 1s ease;
+}
+
+.loader-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  opacity: 0;
+  margin-bottom: 20px;
+}
+
+/* ライン */
+.loader-line {
+  width: 210px;
+  height: 2px;
+  background: #333;
+  transform: scaleX(0);
+}
+
+/* ==================================================
     header （ヘッダー）
 ================================================== */
 .header {
   height: 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.6862745098);
 }
 
 .frame-inner {
@@ -243,7 +282,8 @@ body {
 }
 .fv-container__wrapper {
   display: flex;
-  margin-top: 70px;
+  /* display:fixd;した固定ヘッダーの高さ分だけ上を開けて下に押し下げる */
+  margin-top: 170px;
 }
 
 .fv-description {
@@ -376,6 +416,17 @@ body {
   background-color: #fff;
   justify-content: center;
 }
+.works-box__card {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-right: 5px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  letter-spacing: 0.1%;
+  background-color: rgba(223, 222, 222, 0.4509803922);
+}
+
 .panel-text {
   color: #9F9F9F;
   font-size: 1.5rem;
