@@ -40,3 +40,43 @@ window.addEventListener("load", () => {
     }
   });
 }); 
+
+
+
+// スライド
+
+$(".gallery-section__wrapper").slick({
+  slidesToShow: 3,   /* ★画面に3枚表示する */
+  autoplay:true, // 自動再生
+  slidesToScroll: 1,  
+  autoplaySpeed:4000 ,//再生速度（ミリ秒設定：1000ミリ秒=1秒）
+  infinite: true , // 無限スライド  
+  dots: true,        /* 下部にドット表示 */
+        arrows: true,      /* 左右に矢印表示 */
+        speed: 900,           // ★移動にかかる時間（0.8秒かけて移動）
+  cssEase: 'ease-in-out', // ★ぬるっと滑らかに動かす
+  pauseOnFocus: false, /* フォーカス（クリック後など）されても止めない */
+        
+});
+
+
+// トップに戻るボタン
+
+$(function() {
+  const $pageTop = $('#page-top');
+
+  // 100px以上スクロールしたらボタンを表示
+  $(window).on('scroll', function() {
+    if ($(this).scrollTop() > 1500) {
+      $pageTop.addClass('is-active');
+    } else {
+      $pageTop.removeClass('is-active');
+    }
+  });
+
+  // ボタンをクリックしたらページ最上部へスムーズスクロール
+  $pageTop.on('click', function(e) {
+    e.preventDefault(); // href="#" のデフォルト動作（一瞬でジャンプ）を防止
+    $('html, body').animate({ scrollTop: 0 }, 1000); // 1秒かけて戻る
+  });
+});
