@@ -834,7 +834,6 @@ small {
   .fv-description {
     width: 100%;
     padding-top: 30px;
-    padding-left: clamp(125px, 26vw, 200px);
   }
   .fv-description__en-name {
     margin: 0;
