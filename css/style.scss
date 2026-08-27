@@ -307,7 +307,8 @@ body {
     &__list {
     display: flex;
     line-height: 2;
-    padding-right: 10vw;
+    
+    padding-inline: 10vw;
     }
 
     &__item {
@@ -921,14 +922,21 @@ body {
 ================================================== */
 
 .footer {
-    height: 160px;
+
+    padding-top: 30px;
 
     .frame-inner {
         justify-content: center;
     }
+
+}
+
+.footer .global-nav__list {
+    margin-bottom: 30px;
 }
 
 small {
+    margin-bottom: 10px;
     display: block;
     text-align: center;
 }
@@ -943,7 +951,7 @@ small {
     background-repeat: no-repeat; /* 繰り返さない */
     background-size: cover;       /* 縦横比を保ったまま要素いっぱいに拡大 */
     background-position: center;/* 中央を基準に配置 */
-    padding-bottom: 100px;
+    padding-bottom:  clamp(50px, 6.944vw, 100px);
 }
 
 
@@ -951,14 +959,14 @@ small {
 .works-detail {
 
     &__wrapper {
-    width: 100%;
+    width: 90%;
     max-width: 910px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 70px;
-    margin-bottom: 100px;
-    padding: 80px ;
+    gap: 4.861vw;
+    margin-bottom: clamp(80px, 6.944vw, 100px);
+    padding: 5.555vw;
     border-radius: 30px;
     background-color: #fff;
     
@@ -974,8 +982,9 @@ small {
 .works-hero {
 
     &__title {
+        font-size: clamp(1.2rem, 2.222vw, 2rem);
         margin-top: 100px;
-        padding: 40px 60px;
+        padding: 2.777vw 4.166vw;
         position: relative;/* 疑似要素の位置の基準にする */
         background-image: url(../images/detail-title.jpg);
         background-repeat: no-repeat; /* 繰り返さない */
@@ -989,7 +998,7 @@ small {
             top: 50%;
             transform: translateY(-50%); /* 縦方向の中央揃え */
 
-            width: 6px;
+            width: 0.416vw;
             height: 50%;
             background-color: #469246;
         }
@@ -1010,8 +1019,8 @@ small {
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding-top: 100px;
-    margin-bottom: 100px;
+    padding-top: clamp(50px,6.944vw,100px);
+    margin-bottom: clamp(50px, 6.944vw, 100px);
 
     
 
@@ -1033,10 +1042,10 @@ small {
 }
 
 .sp-views {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
-    margin-bottom:  110px;
+    margin-bottom:  clamp(50px, 7.638vw, 110px);
 
     &__item {
         display: flex;
@@ -1046,12 +1055,12 @@ small {
     }
 
     &__img {
-        border-radius: 25px;
+        border-radius: 12%;
     }
 }
 
 .works__title {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 2.222vw, 2rem);
     text-align: center;
     
 }
@@ -1069,21 +1078,17 @@ small {
     }
 
     &__sub-title {
-        font-size: 1.5rem;
+        font-size: clamp(1rem,1.666vw,1.5rem);
         font-weight: normal;
     }
 }
 
 .works-points {
 
-    .works-detail__wrapper {
-        gap: 100px;
-    }
-
     &__lists {
         display: flex;
         flex-direction: column;
-        gap: 70px;
+        gap: clamp(30px,4.861vw, 70px);
         padding: 0;
     }
 
@@ -1137,7 +1142,9 @@ small {
 
 @media (max-width: 768px) {
 
-
+    p {
+        font-size: 0.8rem;
+    }
     // .bg-panel::before{
     //     width: 0;
 
@@ -1205,6 +1212,15 @@ small {
     // .skill-wrapper__box {
     //     width: ;
     // }
+
+    .sp-views {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer .global-nav {
+        display: flex;
+        justify-content: center;
+    }
 }
 
     

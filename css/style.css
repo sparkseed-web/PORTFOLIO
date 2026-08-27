@@ -261,7 +261,7 @@ body {
 .global-nav__list {
   display: flex;
   line-height: 2;
-  padding-right: 10vw;
+  padding-inline: 10vw;
 }
 .global-nav__item {
   margin-right: clamp(30px, 4.16vw, 60px);
@@ -663,13 +663,18 @@ body {
     footer(フッター)
 ================================================== */
 .footer {
-  height: 160px;
+  padding-top: 30px;
 }
 .footer .frame-inner {
   justify-content: center;
 }
 
+.footer .global-nav__list {
+  margin-bottom: 30px;
+}
+
 small {
+  margin-bottom: 10px;
   display: block;
   text-align: center;
 }
@@ -683,18 +688,18 @@ small {
   background-repeat: no-repeat; /* 繰り返さない */
   background-size: cover; /* 縦横比を保ったまま要素いっぱいに拡大 */
   background-position: center; /* 中央を基準に配置 */
-  padding-bottom: 100px;
+  padding-bottom: clamp(50px, 6.944vw, 100px);
 }
 
 .works-detail__wrapper {
-  width: 100%;
+  width: 90%;
   max-width: 910px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 70px;
-  margin-bottom: 100px;
-  padding: 80px;
+  gap: 4.861vw;
+  margin-bottom: clamp(80px, 6.944vw, 100px);
+  padding: 5.555vw;
   border-radius: 30px;
   background-color: #fff;
 }
@@ -705,8 +710,9 @@ small {
 }
 
 .works-hero__title {
+  font-size: clamp(1.2rem, 2.222vw, 2rem);
   margin-top: 100px;
-  padding: 40px 60px;
+  padding: 2.777vw 4.166vw;
   position: relative; /* 疑似要素の位置の基準にする */
   background-image: url(../images/detail-title.jpg);
   background-repeat: no-repeat; /* 繰り返さない */
@@ -719,7 +725,7 @@ small {
   left: 2%;
   top: 50%;
   transform: translateY(-50%); /* 縦方向の中央揃え */
-  width: 6px;
+  width: 0.416vw;
   height: 50%;
   background-color: #469246;
 }
@@ -736,8 +742,8 @@ small {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  padding-top: 100px;
-  margin-bottom: 100px;
+  padding-top: clamp(50px, 6.944vw, 100px);
+  margin-bottom: clamp(50px, 6.944vw, 100px);
 }
 .works-links__btn {
   border-radius: 50px;
@@ -754,10 +760,10 @@ small {
 }
 
 .sp-views {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 50px;
-  margin-bottom: 110px;
+  margin-bottom: clamp(50px, 7.638vw, 110px);
 }
 .sp-views__item {
   display: flex;
@@ -766,11 +772,11 @@ small {
   align-items: center;
 }
 .sp-views__img {
-  border-radius: 25px;
+  border-radius: 12%;
 }
 
 .works__title {
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2.222vw, 2rem);
   text-align: center;
 }
 
@@ -780,17 +786,14 @@ small {
   gap: 20px;
 }
 .works-wrapper__sub-title {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.666vw, 1.5rem);
   font-weight: normal;
 }
 
-.works-points .works-detail__wrapper {
-  gap: 100px;
-}
 .works-points__lists {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: clamp(30px, 4.861vw, 70px);
   padding: 0;
 }
 .works-points__item {
@@ -828,6 +831,9 @@ small {
   }
 }
 @media (max-width: 768px) {
+  p {
+    font-size: 0.8rem;
+  }
   .btn {
     text-align: center;
   }
@@ -868,6 +874,13 @@ small {
   }
   .about-section__text {
     padding-inline: 40px;
+  }
+  .sp-views {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer .global-nav {
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 480px) {
