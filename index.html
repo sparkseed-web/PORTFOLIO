@@ -19,115 +19,158 @@
 
     <!-- リセットcss -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- ★追加：Slick用CSS（デザイン・ボタン用） -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- ローディング画面 -->
+        <div id="loading">
+            <div class="loader-logo">PORTFOLIO</div>
+            <div class="loader-line"></div>
+        </div>
 
     <header class="header">
-        <div class="frame-inner">
             <nav class="global-nav">
                 <ul class="global-nav__list">
-                    <li class="global-nav__item global-nav__item--red"><a href="#works">WORKS</a></li>
-                    <li class="global-nav__item global-nav__item--blue"><a href="#about">ABOUT</a></li>
-                    <li class="global-nav__item global-nav__item--yellow"><a href="#contact">CONTACT</a></li>
+                    <li class="global-nav__item"><a href="#works" class="global-nav__link global-nav__link--red">WORKS</a></li>
+                    <li class="global-nav__item"><a href="#about" class="global-nav__link global-nav__link--blue">ABOUT</a></li>
+                    <li class="global-nav__item"><a href="#contact" class="global-nav__link global-nav__link--yellow">CONTACT</a></li>
                 </ul>
             </nav>
-        </div>
     </header>
 
     <main>
-        <div class="fv-container">
-            <div class="wrapper fv-container__wrapper">
-                <div class="fv-description">
-                    <h1 class="fv-description__title">PORTFOLIO</h1>
-                    <p class="fv-description__en-name">SAKAMOTO<br>MIKU</p>
-                    <p class="fv-description__text">webdesign / coding / wordpress...... </p>
-                </div>
-                <div class="fv-img-box  bg-panel">
-                    <img class="fv-img-box__image" src="images/三色.jpg" alt="">
-                </div>
-            </div>
-            <div class="scroll-down">
-                <!-- 円形テキスト（SVG） -->
-                <svg class="scroll-down__circle" viewBox="0 0 100 100">
-                    <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                    <text>
-                    <textPath href="#textPath" startOffset="0%">
-                        SCROLL DOWN • SCROLL DOWN • 
-                    </textPath>
-                    </text>
-                </svg>
-                
-                <!-- 中央の矢印ライン -->
-                <div class="scroll-down__arrow"></div>
-            </div>
+        
 
-            <!-- <div class="container_01">
-                <a href="#" class="scroll-down_01">
-                    <div class="circle-text_01"></div>
-                    <div class="arrow_01"></div>
-                </a>
-            </div> -->
-        </div>
+            <div class="fv-container wrapper  ">
+                <div class="  fv-container__wrapper">
+                    <div class="fv-description">
+                        <div class="fv-description__inner">
+                            <h1 class="fv-description__title">PORTFOLIO</h1>
+                            <p class="fv-description__en-name">SAKAMOTO<br>MIKU</p>
+                            <p class="fv-description__text">
+                                <span class="fv-description__item">webdesign</span>
+                                <span class="fv-description__item">coding</span>
+                                <span class="fv-description__item">wordpress...</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fv-img-box  bg-panel">
+                        <img class="fv-img-box__image" src="images/三色.jpg" alt="">
+                    </div>
+                </div>
+                <div class="scroll-down">
+                    <!-- 円形テキスト（SVG） -->
+                    <svg class="scroll-down__circle" viewBox="0 0 100 100">
+                        <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                        <text>
+                        <textPath href="#textPath" startOffset="0%">
+                            SCROLL DOWN • SCROLL DOWN • 
+                        </textPath>
+                        </text>
+                    </svg>
+                    
+                    <!-- 中央の矢印ライン -->
+                    <div class="scroll-down__arrow"></div>
+                </div>
+            </div>
+        
 
         <section class="section works-section" id="works">
             <h2 class="section__title section__title--red" >WORKS</h2>
-            <div class="wrapper works-wrapper">
+            <div class="works-wrapper">
                 <div class="works-box bg-panel">
-                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                    <div class="work-card__image">
+                        <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                    </div>
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
-                        <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
-                        <a href="/works/work-detail-01.html" class="works-box__btn">more</a>
+                        <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                            <span class="works-box__card">jQuery</span>
+                            <span class="works-box__card">Figma</span>
+                            <span class="works-box__card">PHP</span>
+                        </p>
+                        <a href="/works/work-detail-01.html" class="readmore-btn readmore-btn__works">more</a>
                     </div>
-                    <div class="panel-text">ORIGINAL</div>
+                    <div class="panel-text panel-text--original">ORIGINAL</div>
                 </div>
 
                 <div class="works-box bg-panel">
-                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                    <div class="work-card__image">
+                        <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                    </div>
                     <div class="works-box__inner">
                         <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
                         <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
-                        <a href="" class="works-box__btn">more</a>
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                            <span class="works-box__card">jQuery</span>
+                            <span class="works-box__card">Figma</span>
+                        </p>
+                        <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
-                    <div class="panel-text">ORIGINAL</div>
+                    <div class="panel-text panel-text--original">ORIGINAL</div>
                 </div>
 
-                <div class="works-box">
-                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
+                <div class="works-box bg-panel">
+                    <div class="work-card__image">
+                        <img class="works-box__img"  src="images/mockup02.jpg" alt="">
+                    </div>                    
                     <div class="works-box__inner">
-                        <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
-                        <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
-                        <a href="" class="works-box__btn">more</a>
+                        <h3 class="works-box__title section__subtitle">トラベルブログサイト模写</h3>
+                        <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
+                        <a href="" class="readmore-btn readmore-btn__works">more</a>
                     </div>
+                    <div class="panel-text panel-text--mockup">MOCKUP</div>
                 </div>
 
-                <div class="works-box">
-                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
-                    <div class="works-box__inner">
-                        <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
-                        <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
-                        <a href="" class="works-box__btn">more</a>
+                <div class="works-box bg-panel">
+                    <div class="work-card__image">
+                        <img class="works-box__img"  src="images/mockup03.jpg" alt="">
                     </div>
+                    <div class="works-box__inner">
+                        <h3 class="works-box__title section__subtitle">アパレルショップ商品ページ模写</h3>
+                        <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
+                        <a href="" class="readmore-btn readmore-btn__works">more</a>
+                    </div>
+                    <div class="panel-text panel-text--mockup" >MOCKUP</div>
                 </div>
 
-                <div class="works-box">
-                    <img class="works-box__img"  src="images/mockup01.jpg" alt="">
-                    <div class="works-box__inner">
-                        <h3 class="works-box__title section__subtitle">sotto｜雑貨ショップ</h3>
-                        <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p>
-                        <p class="works-caption">HTML / CSS / jQuery / Figma / PHP</p>
-                        <a href="" class="works-box__btn">more</a>
+                <div class="works-box bg-panel">
+                    <div class="work-card__image">
+                        <img class="works-box__img"  src="images/mockup04.jpg" alt="">
                     </div>
+                    <div class="works-box__inner">
+                        <h3 class="works-box__title section__subtitle">フォトブック紹介サイト模写</h3>
+                        <!-- <p class="works-caption">（ WordPressオリジナルテーマ / 企画・デザイン・コーディング担当 ）</p> -->
+                        <p class="works-box__caption">
+                            <span class="works-box__card">HTML</span>
+                            <span class="works-box__card">CSS</span>
+                        </p>
+                        <a href="" class="readmore-btn readmore-btn__works">more</a>
+                    </div>
+                    <div class="panel-text panel-text--mockup">MOCKUP</div>
                 </div>
             </div>
         </section>
         <img class="section__divider" src="images//Slice 1.jpg" alt="">
-        <section class="section about-section" id="about">
+        <section class=" about-section" id="about">
             <h2 class="section__title section__title--blue">ABOUT</h2>
             <div class="about-wrapper">
                 <div class="about-section__img-box">
@@ -135,25 +178,20 @@
                     <p class="jp-name">坂本実紅</p>
                 </div>
                 <div class="about-section__box">
-                    <div class="about-section__inner">
-                        <h3 class="about-wrapper__title section__subtitle">Web制作との出会い</h3>
-                        <p class="about-wrapper__text">
-                            異業種で接客・事務・清掃などの仕事を経験する中で、「正確な実務遂行」と「状況に応じた柔軟な対応」を大切にしてきました。当初はPC操作にも不慣れでしたが、独学でMOS Excelを取得する中で、パソコンを使ってものづくりをする楽しさに触れ、Web制作に興味を持ちました。
-Web制作を始めた当初は、少しずつサイトが形になっていく過程が楽しく、コツコツと作り込むことにやりがいを感じました。エラーを一つずつ解決しながら思い描いた形へ近づけていく過程にも面白さを感じ、完成したときの達成感が、Web制作を好きになった理由の一つです。
-                        </p>
-                    </div>
-                    <div class="about-section__inner">
-                        <h3 class="about-wrapper__title section__subtitle">制作で大切にしていること</h3>
-                        <p class="about-wrapper__text">
-                            制作を続ける中で、「相手にとって分かりやすく、使いやすいものを作ること」を大切にするようになりました。デザインの意図を理解し、情報の優先順位や使いやすさを意識しながら、一つひとつ丁寧に制作することを心掛けています。
-                        </p>
-                    </div>
-                    <div class="about-section__inner">
-                        <h3 class="about-wrapper__title section__subtitle">これから目指すこと</h3>
-                        <p class="about-wrapper__text">
-                            「もっとできることを増やしたい」という思いを原動力に、新しい技術やより良い制作方法を学び続けています。今後も、一つひとつの制作に丁寧に向き合い、技術だけでなく、お客様やユーザーにとって価値のあるWebサイトを提供できる制作者を目指しています。
-                        </p>
-                    </div>
+                    <p class="about-section__text">
+                        つくる楽しさを原動力に、<br>
+                        ユーザーへ届くWebサイトを。
+                    </p>
+                    <p class="about-section__text">
+                        PCに不慣れだった状態から、<br>
+                        ものづくりの面白さに魅せられてWeb制作の道へ。
+                    </p>
+                    <p class="about-section__text">
+                        情報の優先順位や使いやすさにこだわり、<br>
+                        お客様やユーザーにとって価値のあるサイトを<br>
+                        丁寧にカタチにします。
+                    </p>
+                    <div class="btn"><a href="about/about-detail.html" class="readmore-btn readmore-btn__about">read more</a></div> 
                 </div>
             </div>
         </section>
@@ -241,7 +279,7 @@ Web制作を始めた当初は、少しずつサイトが形になっていく�
         </section>
 
         <img class="section__divider section__divider--last" src="images/Slice 3.jpg" alt="">
-        <section class="section gallery-section">   
+        <!-- <section class="section gallery-section">   
             <h2 class="section__title section__title--purple">GALLERY</h2>
             <div class="section__lead">
                 <p class="section__lead--text">日々のひとコマを、大切に。</p>
@@ -250,23 +288,33 @@ Web制作を始めた当初は、少しずつサイトが形になっていく�
             <div class="gallery-section__wrapper">
                 <img src="images/gallery01.jpg" alt="">
                 <img src="images/gallery02.jpg" alt="">
-                <img src="images/gallery03.jpg" width="348  " alt="">
+                <img src="images/gallery03.jpg" alt="">
+                <img src="images/gallery04.jpg" alt="">
             </div>
-        </section>
+        </section> -->
+
+        <!-- トップに戻るボタン -->
+        <a href="#" id="page-top" class="page-top">TOP...</a>
     </main>
 
     <footer class="footer">
         <div class="frame-inner">
             <nav class="global-nav">
                 <ul class="global-nav__list">
-                    <li class="global-nav__item global-nav__item--red"><a href="#works">WORKS</a></li>
-                    <li class="global-nav__item global-nav__item--blue"><a href="#about">ABOUT</a></li>
-                    <li class="global-nav__item global-nav__item--yellow"><a href="#contact">CONTACT</a></li>
+                    <li class="global-nav__item"><a href="#works" class="global-nav__link global-nav__link--red">WORKS</a></li>
+                    <li class="global-nav__item"><a href="#about" class="global-nav__link global-nav__link--blue">ABOUT</a></li>
+                    <li class="global-nav__item"><a href="#contact" class="global-nav__link global-nav__link--yellow">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
         <small>&copy;2026</small>
     </footer>
-    
+    <!-- 1. jQuery本体（公式サイト等から提供されているもの） -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

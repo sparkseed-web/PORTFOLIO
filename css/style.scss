@@ -5,6 +5,9 @@
     /* Josh's Custom CSS Reset
     https://www.joshwcomeau.com/css/custom-css-reset/
     */
+//     * {
+// 	outline: 1px solid magenta;
+// }
 
     *, *::before, *::after {
     box-sizing: border-box;
@@ -88,26 +91,58 @@ body {
 }
 
 .wrapper {
-    max-width: 1000px;
+    width: 100%;
+    // max-width: clamp(600px, 63.19vw, 1300px);
+    max-width: 1115px;
     margin: 0 auto;
 }
+
+/* ==================================================
+    トップに戻るボタン
+================================================== */
+.page-top {
+    font-size: clamp(1rem, 2.222vw, 2rem);
+    position: fixed;
+    right: 6.944vw; //100px
+    bottom: 13.888vw;//200px
+    writing-mode: vertical-rl; /* ★文字を縦書きにする */
+    transform: rotate(180deg); /* ★文字を180度反転・回転させる */
+    cursor: pointer;
+    z-index: 999;
+
+    /* 初期状態は非表示（スクロールしたら表示させるため） */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* スクロール時にクラスを付与して表示させる */
+.page-top.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /* ==================================================
     sections
 ================================================== */
 
 .section {
-    max-width: 1300px;
+    width: 100%;
+    max-width: 80vw;
+
     margin: 0 auto;
+    padding: 0 5.555vw;
     
 
     &__title {
-        width: 450px;
-        height: 90px;
+        width: clamp(180px, 31.25vw, 450px);
         margin: clamp(50px, 6.66vw, 80px) auto;
-        font-size: 3rem;
-        letter-spacing: 8%;
+        font-size:  clamp(2rem, 3.33vw, 3rem);
+        
+        letter-spacing: 0.08em;
         border: 2px dashed;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,7 +173,7 @@ body {
     }
 
     &__subtitle {
-        font-size: 1.25rem;
+        font-size: clamp(15px, 1.38vw, 20px);
     }
 
     &__lead {
@@ -159,19 +194,91 @@ body {
     &__divider {
         display: inline-block;
         width: 100%;
-        height: 300px;
-        margin-top: 150px;
+        height: clamp(130px,20.833vw, 300px );
+        margin-top: clamp(80px, 10.416vw, 150px);
 
         &--last {
             height: 100px;
         }
-    }
-
-    
+    }    
 }
 
 
+/* ==================================================
+    read more ボタン
+================================================== */
+.btn {
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
+.readmore-btn {
+    color: #fff;
+    background-color: #9F9F9F;
+    padding: 10px 3.333vw;
+    width: clamp(100px, 13.888vw, 200px);
+    border-radius: 100px;
+    letter-spacing: 12%;
+    text-align: center;
+    box-shadow: 0 4px 0 rgb(110, 108, 108);
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+        
+    &:hover {
+        transform: translateY(4px);
+        box-shadow: none;
+    }
+    
+    &__works {
+
+        &:hover {
+            background-color: #C89A8B;
+            }
+    }
+    
+    &__about {  
+        
+        &:hover {
+            background-color: #5572b4;      
+            }
+        
+    }
+}
+
+/* ==================================================
+    ローディング画面
+================================================== */
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ece9e6, #ffffff, #f5f7fa);
+    transition: opacity 1s ease;
+    
+}
+
+.loader-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    margin-bottom: 20px;
+}
+
+/* ライン */
+.loader-line {
+  width: 210px;
+  height: 2px;
+  background: #333;
+  transform: scaleX(0);
+}
 
 /* ==================================================
     header （ヘッダー）
@@ -179,19 +286,19 @@ body {
 
 .header{
     // border:1px solid #b69191;
-    height: 100px;    
-}
-
-.frame-inner{
-    // border:1px solid rebeccapurple;
-    max-width: 1000px;
-    height:100%;
-    padding: 0 20px;
-    margin: 0 auto;
+    height: 100px;  
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    width: 100%; //position: fixed;でtextの長さ分に縮んだため、横幅を画面いっぱいに広げる
+    z-index: 1000;
+    background-color: #ffffffaf;
     display: flex;
     justify-content: end;
-    align-items:center;
-    }
+    align-items: center;
+}
+
 
 .global-nav{
     display: flex;
@@ -200,32 +307,48 @@ body {
     &__list {
     display: flex;
     line-height: 2;
+    padding-right: 10vw;
     }
 
     &__item {
-        margin-right: 60px; 
-        
+        margin-right: clamp(30px, 4.16vw, 60px);
+    
         &:nth-last-child(1){
             margin-right: 0;
         }
+    }
 
-        a {
-            display: inline-block;
-            padding-bottom: 2px;
-            
-
-        }
+    &__link {
+        display: inline-block;
+        padding-bottom: 2px;
+        transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
 
         &--red {
             border-bottom: 2px dashed #C89A8B;
+
+            &:hover {
+                border-color: #d4cac6;    
+            }
             }
 
         &--blue {
             border-bottom: 2px dashed #61769A;
+
+            &:hover {
+                border-color: #9b9fa5;    
+            }
             }
 
         &--yellow {
             border-bottom: 2px dashed #C7A54A;
+
+            &:hover {
+                border-color: #bbb5a6;    
+            }
+            }
+
+            &:hover {
+                color: #b6b6b6;
             }
     }
 }
@@ -236,39 +359,65 @@ body {
 ================================================== */
 .fv-container {
     position: relative;
-    height: calc(100vh - 100px);
+    // height: calc(100vh - 100px);
+    /* display:fixd;した固定ヘッダーの高さ分だけ上を開けて下に押し下げる */
+    margin-top: clamp(100px, 18.75vw, 270px);
 
     &__wrapper {
     display: flex;
-    margin-top: 70px;
+    gap: 20px;
+    align-items: center;  
+    justify-content: center;
+    margin-bottom: 5.55vw;
+    
     }
 }
 
 
+
+
 .fv-description {
-    width: 50%;
-    padding: 145px 45px 60px ;
+
+    
+    
+    padding: 3.8vw;
+    padding-right: clamp(3vw,3.8vw,54.72px);
+    padding-left: clamp(70px,5.069vw,73px);
 
         &__title {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 2.22vw, 2rem);
             font-weight: normal;
             letter-spacing:10
         }
 
         &__en-name {
-            font-size:3rem;
+            font-size:  clamp(2rem, 3.33vw, 3rem);
             line-height: 1.3; 
             margin: 20px 0 ;
+        }
+
+        &__item {
+            display: block;
+        }
+
+        &__inner {
+            margin-left: auto;
+        }
+
+        &__text {
+            font-size: clamp(10px, 1.11vw, 1rem);
         }
 }
 
 .fv-img-box {
-    position: relative;
-    width: 50%;            /* 親の50%（500px）いっぱいに広げる */
+    position: relative; 
+    width: min(35vw, 500px);
+    flex-shrink: 0;
 
     
 
     &__image {
+
         width: 100%; /* .fv-img-boxに対する500pxの割合 */
         aspect-ratio: 1 / 1; /* 縦横比を1:1（正方形）に固定 */
         object-fit: cover;   /* 画像が歪むのを防ぐ */
@@ -281,15 +430,17 @@ body {
 }
 
 // グレーのボックス
+    
+
     .bg-panel::before {
         content: "";
-        z-index: -50;
         position: absolute;
-        top: -20px;
-        right: -20px;
+        top: -1.388vw;
+        right: -1.388vw;
         width: 100%;
         height: 100%;
         background-color: #E8E8E8;
+        z-index: -50;
     
 
         /* 点線を描くための背景グラデーション（上・右・下・左の4辺分） */
@@ -407,13 +558,14 @@ body {
     // スクロールダウンcss終わり
 
     .scroll-down {
-    position: absolute;
-    bottom: 10%;        /* 画面の下から30px上の位置に配置 */
-    left: 50%;            /* 画面の左から50%の位置へ移動 */
-    transform: translateX(-50%); /* 自身の幅の半分だけ左に戻して完璧な中央寄せにする */
+    // position: absolute;
+    // left: 50%;
+    
+    // transform: translateX(-50%); /* 自身の幅の半分だけ左に戻して完璧な中央寄せにする */
 
-    width: 140px;  /* 全体のサイズ */
-    height: 140px;
+    width: 9.72vw; /* 全体のサイズ */
+    height: 9.72vw;
+    margin-inline: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -426,7 +578,7 @@ body {
 
         text {
         fill: #333333;       /* 文字の色（白） */
-        font-size: 8.5px;          /* 文字の大きさ */
+        font-size: 0.54rem;          /* 文字の大きさ */
         font-family: serif;        /* フォント（明朝系・セリフ体） */
         letter-spacing: 2px;       /* 文字間隔 */
         }
@@ -436,7 +588,7 @@ body {
     &__arrow {
         position: absolute;
         width: 1px;
-        height: 30px;
+        height: 2.083vw;
         background-color: #333333;
 
         /* 矢印の先端（下側のくの字） */
@@ -468,24 +620,34 @@ body {
 ------------------------------ */
 
 .works-wrapper {
+    max-width: clamp(350px, 63.19vw, 910px);
+    margin: 0 auto;
     display: flex;   
     flex-direction: column;
     gap: 120px;
 }
 
 .works-box  {
+    // width: 910px;
+    // max-width: clamp(350px, 63.19vw, 910px);
+    
     display: flex;
     position: relative;
 
     // グレーのボックス
     &::before {
-        top: 40px;
-        right: -70px;
+        top: 2.777vw;
+        right: -4.861vw;
     }
     
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     &__img ,&__inner {
         box-shadow: 6px 8px 12px 3px rgb(191 191 191);
-        width: 50%;
     }
 
     &__title {
@@ -493,45 +655,49 @@ body {
     }
 
     &__inner {
-        padding: 70px 90px;
+        width: 50%;
+        padding: 4.86vw;
         display: flex;
         flex-direction: column;
         gap: 20px;
         background-color: #fff;
-        
+        justify-content: center;
     }
 
-    &__btn {
-        
-        color: #fff;
-        background-color: #9F9F9F;
-        padding: 10px 48px;
-        width: 150px;
-        border-radius: 100px;
-        letter-spacing: 12%;
-        text-align: center;
-        box-shadow: 0 4px 0 rgb(110, 108, 108);
-        transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
-        
-        
-
-        &:hover {
-            transform: translateY(4px);
-            background-color: #C89A8B;
-            box-shadow: none;
-        }
+    &__card{
+        display: inline-block;
+        font-size: 0.75rem;
+        margin-right: clamp(7px, 0.694vw, 10px);
+        padding: 5px 10px;
+        margin-top:5px ;
+        border-radius: 5px;
+        letter-spacing: 0.1%;
+        background-color: #dfdede73;
     }
+}
+
+.work-card__image {
+    width: 50%;
+    
 }
 
 .panel-text {
     color: #9F9F9F;
     font-size: 1.5rem;
+    text-align: center;
     font-weight: bold;
     position: absolute;
     top: 50%;
-    right: -110px;
-    transform: rotate(90deg);
-    letter-spacing: 20%;
+    transform: translateY(-50%) rotate(90deg) ;
+    letter-spacing: 15%;
+
+    &--original {
+        right: clamp(-110px, -7.43vw, -107px);
+    }
+
+    &--mockup {
+        right: -100px;
+    }
 }
 
 
@@ -540,9 +706,10 @@ body {
 ------------------------------ */
 
 .about-section {
+    
 
     &__img-box {
-        width: 30%;
+        width: clamp(80px, 13.888vw,150px);
 
         .jp-name {
             text-align: center;
@@ -550,17 +717,28 @@ body {
     }
 
     &__box  {
-        width: 70%;
+        width: 80%; 
         display: flex;
+        width: fit-content;
         flex-direction: column;
-        gap: 60px;
+        gap: 2.7777vw; 
+    }
+
+    &__text {
+        font-size: clamp( 1rem, 1.333vw, 1.2rem);
+        line-height:2.0;
+        padding-inline:  1vw;
+        
     }
 }
 
 .about-wrapper {
+    
+    margin-inline: auto;
     display: flex;
-    gap: 150px;
+    gap: 6.944vw; 
     align-items: center;
+    justify-content: center;
 
     &__title {
         color:#757575;
@@ -575,17 +753,21 @@ body {
     }
 }
 
+
+
 /* ------------------------------
     skill-section
 ------------------------------ */
 
 .skill-wrapper {
-    display: flex;
-    gap: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4.861vw;
     justify-content: center ;
+    
 
     &__box {
-        width: 260px;
+        width:clamp(200px,18.055vw, 260px);
         aspect-ratio: 1 / 1; /*アスペクト比を1:1（正方形）に指定（ 自動で縦も200pxの正方形に ） */
         border-radius: 15px;
         background-image: url(../images/skill-card.jpg);
@@ -593,7 +775,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 30px;
+        padding: 2.083vw;
         box-shadow: 6px 8px 12px 3px rgb(191 191 191)
     }
 
@@ -604,32 +786,36 @@ body {
     }
 
     &__box,&__inner {
-        gap:30px;
+        gap:clamp(15px,2.083vw,30px);
     }
 
-    &__description {
-        font-size: 13px;
-        line-height: 1.8;
-        letter-spacing: 0.3em;
-        
-    }
 }
 
 .icon-box {
+    width: clamp(50px, 4vw, 60px);
+    height: clamp(50px, 4vw, 60px);
+
+    gap: 2.083vw;
     display: flex;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 
 /* ------------------------------
     contact-section
 ------------------------------ */
+.contact-wrapper{
+    max-width: 700px;
+    margin:  auto;
+}
 
 .form {
     display:flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 70%;
+    width: 100%;
+    
     margin-left: auto;    /*  フォーム自体を中央に寄せる */
     margin-right: auto; /*  フォーム自体を中央に寄せる */
     
@@ -710,10 +896,22 @@ body {
     }
 
     &__wrapper {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 10px;
+        
+        img {
+            height: 216px;
+            width: 100%; 
+            object-fit: cover; /* ★画像を引き伸ばさず中央で切り抜く */
+        }
     }
+}
+
+/* 2. 画像と画像の間に余白をつくる */
+.slick-slide {
+  margin: 0 10px; /* ★左右に10pxずつ（合計20px）の余白を作る */
 }
 
 
@@ -753,6 +951,7 @@ small {
 .works-detail {
 
     &__wrapper {
+    width: 100%;
     max-width: 910px;
     margin: 0 auto;
     display: flex;
@@ -768,18 +967,20 @@ small {
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: clamp(30px, 2.777vw, 40px);
     }
 }
 
 .works-hero {
 
     &__title {
+        margin-top: 100px;
         padding: 40px 60px;
         position: relative;/* 疑似要素の位置の基準にする */
         background-image: url(../images/detail-title.jpg);
-        font-weight: normal;
-        letter-spacing: 0.2rem;
+        background-repeat: no-repeat; /* 繰り返さない */
+        background-size: cover;       /* 縦横比を保ったまま要素いっぱいに拡大 */
+        background-position: center;/* 中央を基準に配置 */
 
         &::before {
             content: "";
@@ -793,6 +994,10 @@ small {
             background-color: #469246;
         }
     }
+        font-weight: normal;
+        letter-spacing: 0.2rem;
+
+        
 
     &__image {
         max-width: 100%;
@@ -808,6 +1013,8 @@ small {
     padding-top: 100px;
     margin-bottom: 100px;
 
+    
+
     &__btn {
         border-radius: 50px;
         padding: 10px;
@@ -816,7 +1023,12 @@ small {
         box-shadow: 6px 8px 12px 3px rgb(191 191 191);
         display: flex;
         gap: 10px;
+        transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
 
+        &:hover {
+            transform: translateY(-4px); /* 上に4px浮かせる */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* 影を広げて濃くする */
+        }
     }
 }
 
@@ -845,10 +1057,12 @@ small {
 }
 
 .works-wrapper {
-    max-width: 910px;
-    margin: 0 auto;
+    // width: 100%;
+    // max-width: clamp(500px,63.19vw,910px);
+    // margin: 0 auto;
 
     &__inner {
+
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -876,17 +1090,131 @@ small {
     &__item {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
     }
 
     &__text {
+        padding-bottom: 10px;
         border-bottom: 1px solid ;
     }
 }
 
 .back-link {
     display: block;
-    text-align: center;
+    text-align: center; 
     font-weight: bold;
     font-size: 1.5rem;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+
+
+    &:hover {
+        color: #918f8f;
+        
+    }
+}
+
+
+/* ANCHOR: about Detail Page (詳細ページ専用スタイル) */
+/* ==========================================
+    about Detail Page（詳細ページ専用スタイル）
+========================================== */
+
+.about-detail {
+
+    .section__divider {
+        margin-top: 0;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .skill-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+
+    // .bg-panel::before{
+    //     width: 0;
+
+    // }
+    .btn {
+        text-align: center;
+    }
+
+    .fv-description {
+        width: 100%;
+        
+        padding-top: 30px;
+        // padding-left: clamp(125px, 26vw,200px);
+        
+        
+
+        &__en-name {
+            margin: 0;
+        }
+    }
+
+    
+    .fv-container__wrapper,.skill-wrapper,.works-box  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* 中央寄せ */
+        
+    }
+
+
+    .fv-img-box {
+        align-self: center;
+        margin-top: -100px;
+        transform: translateX(12vw);
+    }
+
+    .scroll-down__arrow {
+        width: 0.5px;
+    }
+
+    .section {
+        padding: 0;
+    }
+
+    .works-box {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .work-card__image,.works-box__inner {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-wrapper {
+        flex-direction: column;
+        
+    }
+
+    .about-section__text {
+        padding-inline: 40px;
+    }
+
+    // .skill-wrapper__box {
+    //     width: ;
+    // }
+}
+
+    
+
+@media (max-width: 480px) {
+  .fv-img-box {
+    transform: translateX(13vw);
+  }
+  .fv-description__en-name {
+    line-height: 1.1;
+  }
+ 
 }
