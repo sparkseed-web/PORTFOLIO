@@ -734,7 +734,10 @@ small {
   letter-spacing: 0.2rem;
 }
 .works-hero__image {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .works-links {
