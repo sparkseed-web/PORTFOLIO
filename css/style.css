@@ -513,6 +513,9 @@ body {
   line-height: 2;
   padding-inline: 1vw;
 }
+.about-section__image {
+  margin-bottom: 10px;
+}
 
 .about-wrapper {
   margin-inline: auto;
