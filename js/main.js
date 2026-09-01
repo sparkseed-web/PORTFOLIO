@@ -56,6 +56,17 @@ $(".gallery-section__wrapper").slick({
         speed: 900,           // ★移動にかかる時間（0.8秒かけて移動）
   cssEase: 'ease-in-out', // ★ぬるっと滑らかに動かす
   pauseOnFocus: false, /* フォーカス（クリック後など）されても止めない */
+
+  // スマホ表示
+  responsive: [
+    {
+      breakpoint: 768, // 768px未満（スマホ・タブレット）の場合
+      settings: {
+        slidesToShow: 1, // ★スマホでは1枚表示にする
+        arrows: false,   // （お好みで）スマホで左右の矢印を非表示にしてスワイプメインにする場合はfalse
+      }
+    }
+  ]
         
 });
 
