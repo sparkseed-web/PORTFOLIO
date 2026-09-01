@@ -136,6 +136,7 @@ body {
     
 
     &__title {
+        font-weight: normal;
         width: clamp(180px, 31.25vw, 450px);
         margin: clamp(50px, 6.66vw, 80px) auto;
         font-size:  clamp(2rem, 3.33vw, 3rem);
@@ -1133,6 +1134,14 @@ small {
     }
 }
 
+/* ==========================================
+    mockup Page（模写サイト詳細ページ専用スタイル）
+========================================== */
+
+.mockup__inner {
+    flex-direction: row;
+    align-items: center;
+}
 
 @media (max-width: 900px) {
 
