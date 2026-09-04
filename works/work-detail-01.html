@@ -77,7 +77,7 @@
 
                 <div class="works-info works-section">
                     <div class="works-detail__wrapper">
-                        <h2 class="works__title">作品情報</h2>
+                        <h2 class="works__title ">作品情報</h2>
 
                         <div class="works-wrapper__box">
                             <div class="works-wrapper__inner">
@@ -91,16 +91,13 @@
                                 <p class="works-wrapper__text">HTML / CSS / jQuery / Figma </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="works-about works-section">
-                    <div class="works-detail__wrapper">
-                        <h2 class="works__title">サイトについて</h2>
                         <div class="works-wrapper__box">
                             <div class="works-wrapper__inner">
                                 <h3 class="works-wrapper__sub-title">サイト概要</h3>
-                                <p class="works-wrapper__text">「日々目まぐるしく時が進む中で、自分の感覚に寄り添い、自分を大切にできる時間を取り戻してほしい」というブランドコンセプトのもと生まれた架空の雑貨店のサイト。</p>
+                                <p class="works-wrapper__text">デザインカンプからの静的コーディングと、更新性を考慮したWordPress独自テーマ構築。<br>
+                                                                「日々目まぐるしく時が進む中で、自分の感覚に寄り添い、
+                                                                    自分を大切にできる時間を取り戻してほしい」という
+                                                                    ブランドコンセプトのもと生まれた架空の雑貨店のサイト。</p>
                             </div>
                         </div>
                         <div class="works-wrapper__box">
@@ -117,24 +114,60 @@
                         <h2 class="works__title">デザインのこだわりポイント</h2>
                         <ul class="works-points__lists">
                             <li class="works-points__item">
-                                <h3 class="works-wrapper__sub-title">①ブランドの世界観を伝えるメインビジュアル</h3>
+                                <h3 class="works-wrapper__sub-title">① ブランドの世界観を伝えるメインビジュアル</h3>
                                 <p class="works-points__text">トップに動画を配置し、ブランドの世界観や穏やかな時間の流れを表現しました。</p>
                             </li>
                             <li class="works-points__item">
-                                <h3 class="works-wrapper__sub-title">②安心感と柔らかさを表現したトーン＆マナー</h3>
+                                <h3 class="works-wrapper__sub-title">② 安心感と柔らかさを表現したトーン＆マナー</h3>
                                 <p class="works-points__text">やさしい配色と落ち着いたアニメーションで、安心感のあるデザインを意識しました。</p>
                             </li>
                             <li class="works-points__item">
-                                <h3 class="works-wrapper__sub-title">③直感的なインタラクション</h3>
+                                <h3 class="works-wrapper__sub-title">③ 直感的なインタラクション</h3>
                                 <p class="works-points__text">hoverアニメーションを取り入れ、自然に操作したくなる体験を目指しました。</p>
                             </li>
                             <li class="works-points__item">
-                                <h3 class="works-wrapper__sub-title">④不安を解消する情報設計</h3>
+                                <h3 class="works-wrapper__sub-title">④ 不安を解消する情報設計</h3>
                                 <p class="works-points__text">営業カレンダーを設置し、利用前の不安を軽減できるよう工夫しました。</p>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="works-about works-section">
+                    <div class="works-detail__wrapper">
+                        <h2 class="works__title">実装機能・工夫したポイント</h2>
+                        <div class="works-wrapper__box">
+                            <div class="works-wrapper__inner">
+                                <h3 class="works-wrapper__sub-title works-wrapper__sub-title--accent">静的サイトコーディング</h3>
+                                <ul class="works-points__lists">
+                                    <li class="works-points__item">
+                                        <h4 class="works-wrapper__item-title">① 保守性の高いコード設計</h4>
+                                        <p class="works-points__text">root を用いたカラー・フォントの変数化やコメントアウトの構造化を行い、コード肥大化後も管理しやすい設計を意識しました。</p>
+                                    </li>
+                                    <li class="works-points__item">
+                                        <h4 class="works-wrapper__item-title">② clamp() 関数の活用</h4>
+                                        <p class="works-points__text">柔軟なレスポンシブ対応clamp() 関数を活用し、画面幅に応じてフォントサイズや余白が滑らかに変化する流動的なレイアウトを実現しました。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="works-wrapper__box">
+                            <div class="works-wrapper__inner">
+                                <h3 class="works-wrapper__sub-title works-wrapper__sub-title--accent">WordPressオリジナルテーマ構築</h3>
+                                <ul class="works-points__lists">
+                                    <li class="works-points__item">
+                                        <h4 class="works-wrapper__item-title">① カスタム投稿タイプを設定</h4>
+                                        <p class="works-points__text">ノーコードで更新できる柔軟な管理画面（ACF・カスタム投稿）product（商品）や news（お知らせ）のカスタム投稿タイプを設定。ACFを用い、商品仕様（サイズや素材等）を管理画面から直感的に入力できるように構築しました。</p>
+                                    </li>
+                                    <li class="works-points__item">
+                                        <h4 class="works-wrapper__item-title">② PHP条件分岐による実装</h4>
+                                        <p class="works-points__text">PHP条件分岐による無駄のないコード出力if ( get_field('...') ) による条件分岐を実装し、未入力の項目はHTMLタグごと非表示になるよう制御。画面の崩れを防ぎ、不要なタグを出力させない綺麗なマークアップを徹底しました。</p>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
             <a href="../index.html#works" class="back-link">BACK</a>
         </div>
         

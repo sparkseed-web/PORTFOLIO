@@ -785,18 +785,31 @@ small {
 }
 
 .works__title {
+  width: clamp(180px, 31.25vw, 550px);
+  margin: 0 auto;
+  display: inline;
   font-size: clamp(1.3rem, 2.222vw, 2rem);
+  padding: 10px;
   text-align: center;
+  border: 2px dashed #42a838;
 }
 
 .works-wrapper__inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 .works-wrapper__sub-title {
   font-size: clamp(1rem, 1.666vw, 1.5rem);
-  font-weight: normal;
+  font-weight: bold;
+}
+.works-wrapper__sub-title--accent {
+  padding-left: 10px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #42a838; /* 左側に太線を入れると見やすい */
+}
+.works-wrapper__item-title {
+  font-size: clamp(0.9rem, 1.666vw, 1.2rem);
 }
 
 .works-points__lists {
