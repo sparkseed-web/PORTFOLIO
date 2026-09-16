@@ -49,7 +49,7 @@ $(".gallery-section__wrapper").slick({
   slidesToShow: 3,   /* ★画面に3枚表示する */
   autoplay:true, // 自動再生
   slidesToScroll: 1,  
-  autoplaySpeed:4000 ,//再生速度（ミリ秒設定：1000ミリ秒=1秒）
+  autoplaySpeed:3000 ,//再生速度（ミリ秒設定：1000ミリ秒=1秒）
   infinite: true , // 無限スライド  
   dots: true,        /* 下部にドット表示 */
         arrows: true,      /* 左右に矢印表示 */
